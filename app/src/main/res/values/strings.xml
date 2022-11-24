@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FinalProject4</string>
+    <string-array name="pricelist">
+        <item>Popular</item>
+        <item>High to Low</item>
+        <item>Low to High</item>
+    </string-array>
+</resources>

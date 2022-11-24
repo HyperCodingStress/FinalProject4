@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="10dp"
+        android:fadingEdgeLength="10dp"
+        android:layout_gravity="center|right"
+        android:outlineSpotShadowColor="@color/black"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bus type"
+                android:textColor="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Ac"
+                    android:textColor="@color/black"
+                    android:paddingRight="30dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/Nonac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Non-Ac"
+                    android:textColor="@color/black"
+                    android:paddingRight="30dp"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        android:fadingEdgeLength="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center|right"
+        android:outlineSpotShadowColor="@color/black"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bus type"
+                android:textColor="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/morning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Morning"
+                    android:textColor="@color/black"
+                    android:paddingRight="15dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/noon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Noon"
+                    android:textColor="@color/black"
+                    android:paddingRight="20dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/evening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Evening"
+                    android:textColor="@color/black"
+                    android:paddingRight="20dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Night"
+                    android:textColor="@color/black"
+                    android:paddingRight="30dp"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/biru"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

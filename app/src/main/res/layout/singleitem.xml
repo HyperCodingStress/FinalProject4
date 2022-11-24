@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_margin="24dp">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="15dp"
+       android:background="@color/white">
+
+      <TextView
+          android:id="@+id/NamaBus"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="13dp"
+          android:text="Nama Bus"
+          android:textColor="#000"
+          android:textSize="25sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/BusType"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/NamaBus"
+          android:layout_marginLeft="13dp"
+          android:layout_marginTop="5dp"
+          android:text="Bus Type"
+          android:textColor="@color/gray"
+          android:textSize="20sp"/>
+
+      <TextView
+          android:id="@+id/BusHours"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/BusType"
+          android:layout_marginLeft="13dp"
+          android:layout_marginTop="5dp"
+          android:text="Hours"
+          android:textColor="@color/purple_200"
+          android:textSize="20sp"/>
+
+      <View
+          android:id="@+id/divider"
+          android:layout_width="1dp"
+          android:layout_height="100dp"
+          android:background="?android:attr/listDivider"
+          android:layout_toRightOf="@+id/NamaBus"/>
+
+      <TextView
+          android:id="@+id/Rating"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/divider"
+          android:layout_marginLeft="13dp"
+          android:layout_marginTop="5dp"
+          android:text="Rating"
+          android:textColor="#FC8686"
+          android:textSize="15sp"/>
+
+      <TextView
+          android:id="@+id/Harga"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/divider"
+          android:layout_below="@+id/Rating"
+          android:layout_marginLeft="13dp"
+          android:layout_marginTop="5dp"
+          android:text="Harga"
+          android:textColor="@color/biru"
+          android:textSize="20sp"
+          android:textStyle="bold"/>
+   </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
