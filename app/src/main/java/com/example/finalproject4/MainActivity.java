@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import java.util.concurrent.TimeUnit;
-
 public class MainActivity extends AppCompatActivity {
     Handler handler;
     @Override
@@ -18,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, DetailPesanan.class);
+                Intent intent = new Intent(MainActivity.this, login.class);
                 startActivity(intent);
                 finish();
             }

@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import java.util.Calendar;
 public class HomePage extends AppCompatActivity {
     private TextView datang,kembali;
     private ImageButton dateButton,returnButton;
+    private Button search;
     private DatePickerDialog datePickerDialog;
     String tampung = ""; //buat nampung isi tombol
     @Override
@@ -24,10 +27,18 @@ public class HomePage extends AppCompatActivity {
         initDatePicker();
         dateButton = findViewById(R.id.datepicker);
         returnButton = findViewById(R.id.returnpicker);
+        search = findViewById(R.id.search);
         datang = findViewById(R.id.tanggalBerangkat);
         kembali = findViewById(R.id.tanggalKembali);
         datang.setText(getTodayDate());
         kembali.setText(getTodayDate());
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, DetailPesanan.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private String getTodayDate() {
