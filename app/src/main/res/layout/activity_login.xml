@@ -8,36 +8,89 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="40dp"
-    android:background="@drawable/background">
+    android:background="@drawable/gradient">
 
-
-    <EditText
-        android:id="@+id/Email"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:drawableStart="@drawable/custom_email_icon"
-        android:drawablePadding="12dp"
-        android:background="@drawable/custom_edit_text"
-        android:inputType="textEmailAddress"
-        android:hint="Masukan Email"
-        android:textColorHint="@color/gray"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/black"/>
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/gray">
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:drawableStart="@drawable/custom_email_icon"
+            android:drawablePadding="12dp"
+            android:background="@drawable/custom_edit_text"
+            android:inputType="textEmailAddress"
+            android:hint="Masukan Email"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/Pass"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:drawableStart="@drawable/custom_lock_icon"
-        android:drawablePadding="12dp"
-        android:background="@drawable/custom_edit_text"
-        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
         android:textColorHint="@color/gray"
-        android:hint="Masukan Password"
-        android:textColor="@color/black"/>
+        app:passwordToggleTint="@color/gray">
 
+        <EditText
+            android:id="@+id/Pass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:drawableStart="@drawable/custom_lock_icon"
+            android:drawablePadding="12dp"
+            android:background="@drawable/custom_edit_text"
+            android:inputType="textPassword"
+            android:hint="Masukan Password"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/biru"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Belum Punya Akun?"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/RegisPage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" Daftar"
+            android:textColor="#FF0000"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
 
 </LinearLayout>
 

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/cardd.xml" value="0.2245" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/custom_email_icon.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/custom_lock_icon.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/gradient.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2245" />
@@ -23,8 +24,9 @@
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_home_page.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_home_pagee.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_homepage.xml" value="0.18887601390498263" />
-        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_main.xml" value="0.22864583333333333" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_register.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_testing.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/filtering.xml" value="0.23125" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/singleitem.xml" value="0.2887700534759358" />
