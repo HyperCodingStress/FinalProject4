@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "882551196138",
+    "firebase_url": "https://bus-ticket-c1549-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bus-ticket-c1549",
+    "storage_bucket": "bus-ticket-c1549.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882551196138:android:208dc76a4901a017c38a93",
+        "android_client_info": {
+          "package_name": "com.example.finalproject4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882551196138-2mcjjdaoqbdj6fv03pd9bumkbhp408qp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalproject4",
+            "certificate_hash": "315f1b1c44371be8d6c8a330a22eadf7c68d9301"
+          }
+        },
+        {
+          "client_id": "882551196138-8vatiuk1h7859q8jfjrfmq28ko1m7t6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCVGVILU1bCB6CCoQA-B1n7e1bgNvsa4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882551196138-8vatiuk1h7859q8jfjrfmq28ko1m7t6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
