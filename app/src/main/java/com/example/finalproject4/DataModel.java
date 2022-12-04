@@ -1,13 +1,22 @@
 package com.example.finalproject4;
 
 public class DataModel {
-    public String nama,type,hours,rating,harga,rate;
+    public String nama,type,rating,estimasi;
+    public Integer harga,rate,hours;
 
-    public String getRate() {
+    public Integer getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public String getEstimasi() {
+        return estimasi;
+    }
+
+    public void setEstimasi(String estimasi) {
+        this.estimasi = estimasi;
+    }
+
+    public void setRate(Integer rate) {
         this.rate = rate;
     }
 
@@ -27,27 +36,25 @@ public class DataModel {
         this.type = type;
     }
 
-    public String getHours() {
+    public Integer getHours() {
         return hours;
     }
 
-    public void setHours(String hours) {
+    public void setHours(Integer hours) {
         this.hours = hours;
     }
 
-    public String getRating() {
-        return rating;
-    }
+    public String getRating() {return rating;}
 
     public void setRating(String rating) {
         this.rating = rating;
     }
 
-    public String getHarga() {
+    public Integer getHarga() {
         return harga;
     }
 
-    public void setHarga(String harga) {
+    public void setHarga(Integer harga) {
         this.harga = harga;
     }
 }

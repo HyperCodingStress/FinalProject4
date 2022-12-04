@@ -12,5 +12,6 @@ public class testing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing);
         test = findViewById(R.id.testview);
+
     }
 }

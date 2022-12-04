@@ -101,7 +101,6 @@ public class register extends AppCompatActivity implements View.OnClickListener{
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user);
-//                            updateUI(user);
                             startActivity(new Intent(getApplicationContext(), testing.class));
                         } else {
                             // If sign in fails, display a message to the user.

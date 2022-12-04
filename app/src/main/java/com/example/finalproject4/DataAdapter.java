@@ -1,6 +1,7 @@
 package com.example.finalproject4;
 
 import static java.security.AccessController.getContext;
+import static java.util.Collections.replaceAll;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -28,7 +30,18 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
      * @param options
      */
 
+    public String DataNama,DataType,DataRating,DataEstimate;
+    public Integer DataHarga,DataRate,DataHours;
 
+    private OnRecyclerViewClickListener listener;
+
+    public interface OnRecyclerViewClickListener {
+        void onClick(int position);
+    }
+
+    public void OnRecyclerViewClickListener (OnRecyclerViewClickListener listener){
+        this.listener = listener;
+    }
 
     public DataAdapter(@NonNull FirebaseRecyclerOptions<DataModel> options) {
         super(options);
@@ -42,43 +55,21 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
         holder.rating.setText(model.getRating());
         holder.rate.setText(model.getRate() + " Rating");
         holder.harga.setText("Rp"+model.getHarga());
-        holder.btnBo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.nama.getContext());
-                builder.setTitle("Apakah Anda Yakin Untuk Membeli");
-                builder.setMessage("Jika Sudah Di Membeli tidak dapat di cancel");
-                builder.setPositiveButton("Book Now",new DialogInterface.OnClickListener(){
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        System.out.println("pindah ke testing");
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(holder.nama.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.show();
-            }
-        });
+        holder.estimate.setText(model.getEstimasi());
     }
 
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singleitem,parent,false);
-        return new myViewHolder(view);
+        return new myViewHolder(view,listener);
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{
-        TextView nama,type,jam,rating,harga,rate;
+        TextView nama,type,jam,rating,harga,rate,estimate;
         Button btnBo;
 
-        public myViewHolder(@NonNull View itemView) {
+        public myViewHolder(@NonNull View itemView, OnRecyclerViewClickListener listener) {
             super(itemView);
             nama = (TextView) itemView.findViewById(R.id.NamaBus);
             type = (TextView) itemView.findViewById(R.id.BusType);
@@ -86,8 +77,25 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
             rating = (TextView) itemView.findViewById(R.id.Rating);
             rate = (TextView) itemView.findViewById(R.id.Rate);
             harga = (TextView) itemView.findViewById(R.id.Harga);
+            estimate = (TextView) itemView.findViewById(R.id.BusEstimate);
             btnBo = itemView.findViewById(R.id.booking);
 
+            btnBo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null && getAbsoluteAdapterPosition()!= RecyclerView.NO_POSITION){
+                        listener.onClick(getAbsoluteAdapterPosition());
+                        DataNama = nama.getText().toString().trim();
+                        DataType = type.getText().toString().trim();
+                        DataHarga = Integer.valueOf(harga.getText().toString().trim().replaceAll("[^0-9]+", ""));
+                        DataRating = rating.getText().toString().trim();
+                        DataEstimate = estimate.getText().toString().trim();
+                        DataRate = Integer.valueOf(rate.getText().toString().trim().replaceAll("[^0-9]+", ""));
+                        DataHours = Integer.valueOf(jam.getText().toString().trim().replaceAll("[^0-9]+", ""));
+                        System.out.println(DataHours);
+                    }
+                }
+            });
         }
     }
 }
