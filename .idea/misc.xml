@@ -12,27 +12,38 @@
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_email_focused.xml" value="0.1" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_location_gray.xml" value="0.2255" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2255" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_lock_focused.xml" value="0.1" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_baseline_qr_code_24.xml" value="0.2255" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_google.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/person.xml" value="0.2245" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/drawable/test.xml" value="0.2245" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_alfa_payment.xml" value="0.2" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_bni_payment.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_contact.xml" value="0.264" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_detail_payment.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_detail_pesanan.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_history.xml" value="0.23229166666666667" />
-        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_home_page.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_home_pagee.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_homepage.xml" value="0.18887601390498263" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_main.xml" value="0.22864583333333333" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_payment_method.xml" value="0.1" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_register.xml" value="0.23229166666666667" />
-        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_seat.xml" value="0.23229166666666667" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_seat.xml" value="0.16" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_testing.xml" value="0.23229166666666667" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_ticket_detail.xml" value="0.12" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/activity_visa_payment.xml" value="0.23229166666666667" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/filtering.xml" value="0.23125" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/fragment_data_tampung.xml" value="0.23229166666666667" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/ratingpop.xml" value="0.264" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/singleitem.xml" value="0.2887700534759358" />
-        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/switchcard.xml" value="0.4779116465863454" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/singleorder.xml" value="0.2" />
+        <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/switchcard.xml" value="0.31417624521072796" />
         <entry key="..\:/KODINGAN/AndroidStudio/FinalProject4/app/src/main/res/layout/test.xml" value="0.23229166666666667" />
       </map>
     </option>

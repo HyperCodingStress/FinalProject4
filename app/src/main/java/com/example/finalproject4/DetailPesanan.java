@@ -72,7 +72,7 @@ public class DetailPesanan extends AppCompatActivity implements AdapterView.OnIt
                                 intent.putExtra("type", dataAdapter.DataType);
                                 intent.putExtra("rating", dataAdapter.DataRating);
                                 intent.putExtra("estimasi", dataAdapter.DataEstimate);
-                                intent.putExtra("harga", dataAdapter.DataHarga);
+                                intent.putExtra("hargaTiket", dataAdapter.DataHarga);
                                 intent.putExtra("rate", dataAdapter.DataRate);
                                 intent.putExtra("hours", dataAdapter.DataHours);
                                 startActivity(intent);

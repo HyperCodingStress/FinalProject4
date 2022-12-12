@@ -12,72 +12,72 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         android:clipToPadding="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/topSection"
-                android:background="@color/white">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                android:background="@color/purple_200"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/Tanggal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/imageView3"
                     android:text="From"
-                    android:textColor="@color/gray" />
+                    android:textColor="@color/white" />
 
-                <Spinner
-                    android:id="@+id/From"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/nomorBO"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView8"
-                    android:layout_toRightOf="@id/imageView3"
-                    android:layout_weight="1" />
-
+                    android:text="nomor booking"
+                    android:textColor="@color/white"
+                    android:layout_alignParentRight="true"/>
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/bottomSection"
-                android:background="#B2F8EBEB">
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_location_gray" />
+                android:background="@color/white"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/namabis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_toRightOf="@id/imageView4"
-                    android:text="To"
-                    android:textColor="@color/white"/>
+                    android:text="Sempati"
+                    android:textColor="@color/purple_700"/>
 
-                <Spinner
-                    android:id="@+id/To"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/terminal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView9"
-                    android:layout_toRightOf="@id/imageView4"
-                    android:layout_weight="1" />
+                    android:layout_below="@+id/namabis"
+                    android:layout_weight="1"
+                    android:text="terminal"
+                    android:textColor="@color/purple_700"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:text="SUCCES"
+                    android:textColor="#21BC16"/>
 
             </RelativeLayout>
-
 
         </LinearLayout>
 

@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
-        android:layout_margin="30dp">
+        android:layout_margin="30dp"
+        app:cardBackgroundColor="@color/white">
 
         <TextView
             android:id="@+id/info"
@@ -21,18 +22,26 @@
             android:text="Contact information"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/emailContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/gray"
+            android:focusable="false"
+            android:clickable="false"
+            android:cursorVisible="false"
             android:ems="10"
             android:hint="Email Adress"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="45dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:editable="false"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray" />
 
         <EditText
             android:id="@+id/PhoneContact"
@@ -43,7 +52,10 @@
             android:inputType="phone"
             android:layout_marginTop="95dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/gray"
+            android:textColorHint="@color/gray"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -54,7 +66,8 @@
         app:cardUseCompatPadding="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginLeft="30dp"
+        app:cardBackgroundColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -71,7 +84,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.172"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/age"
@@ -84,7 +98,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.075"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameContact" />
+                app:layout_constraintTop_toBottomOf="@+id/nameContact"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/gray"
+                android:textColorHint="@color/gray"/>
 
             <EditText
                 android:id="@+id/nameContact"
@@ -97,7 +114,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/info2" />
+                app:layout_constraintTop_toBottomOf="@+id/info2"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/gray"
+                android:textColorHint="@color/gray"/>
 
             <TextView
                 android:id="@+id/Gender"
@@ -108,7 +128,8 @@
                 android:text="Gender"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameContact" />
+                app:layout_constraintTop_toBottomOf="@+id/nameContact"
+                android:textColor="@color/black"/>
 
             <RadioGroup
                 android:layout_width="wrap_content"
@@ -124,7 +145,8 @@
                     android:layout_height="wrap_content"
                     android:text="Male"
                     tools:layout_editor_absoluteX="216dp"
-                    tools:layout_editor_absoluteY="104dp" />
+                    tools:layout_editor_absoluteY="104dp"
+                    android:textColor="@color/black"/>
 
                 <RadioButton
                     android:id="@+id/perempuan"
@@ -132,7 +154,8 @@
                     android:layout_height="wrap_content"
                     android:text="Female"
                     tools:layout_editor_absoluteX="216dp"
-                    tools:layout_editor_absoluteY="104dp" />
+                    tools:layout_editor_absoluteY="104dp"
+                    android:textColor="@color/black"/>
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

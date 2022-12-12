@@ -78,7 +78,7 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
             rate = (TextView) itemView.findViewById(R.id.Rate);
             harga = (TextView) itemView.findViewById(R.id.Harga);
             estimate = (TextView) itemView.findViewById(R.id.BusEstimate);
-            btnBo = itemView.findViewById(R.id.booking);
+            btnBo = (Button) itemView.findViewById(R.id.booking);
 
             btnBo.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,7 +92,6 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
                         DataEstimate = estimate.getText().toString().trim();
                         DataRate = Integer.valueOf(rate.getText().toString().trim().replaceAll("[^0-9]+", ""));
                         DataHours = Integer.valueOf(jam.getText().toString().trim().replaceAll("[^0-9]+", ""));
-                        System.out.println(DataHours);
                     }
                 }
             });

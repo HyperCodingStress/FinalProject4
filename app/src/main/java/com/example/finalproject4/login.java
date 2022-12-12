@@ -34,6 +34,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "GoogleActivity";
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
+    nampungLogin a = new nampungLogin();
+//    GoogleSignInAccount account =  GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 // ...
 // Initialize Firebase Auth
 
@@ -88,9 +90,9 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            System.out.println(user);
-//                            updateUI(user);
-                            startActivity(new Intent(getApplicationContext(), testing.class));
+                            a.setEmail(user.getEmail());
+                            System.out.println(a.getUID());
+                            startActivity(new Intent(getApplicationContext(), HomePage.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -151,7 +153,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(getApplicationContext(), testing.class));
+//                            a.setEmail(user != null ? user.getEmail() : null);
+                            startActivity(new Intent(getApplicationContext(), HomePage.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

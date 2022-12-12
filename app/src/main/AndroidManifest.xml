@@ -16,15 +16,24 @@
         android:theme="@style/Theme.FinalProject4"
         tools:targetApi="31">
         <activity
+            android:name=".alfaPayment"
+            android:exported="false" />
+        <activity
+            android:name=".bniPayment"
+            android:exported="false" />
+        <activity
+            android:name=".TicketDetail"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentMethod"
+            android:exported="false" />
+        <activity
             android:name=".Seat"
             android:exported="false" />
         <activity
             android:name=".register"
             android:exported="false"
             android:label="register" />
-        <activity
-            android:name=".testing"
-            android:exported="false" />
         <activity
             android:name=".History"
             android:exported="false" />
