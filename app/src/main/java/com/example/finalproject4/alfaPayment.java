@@ -1,14 +1,18 @@
 package com.example.finalproject4;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +29,7 @@ import java.util.Random;
 public class alfaPayment extends AppCompatActivity implements QRGenerator {
     TextView TotalHarga,numericgenAlfa;
     ImageButton backtopaymetns;
+    ImageView qrcode;
     Button btn;
     int code;
     private FirebaseAuth mAuth;
@@ -33,6 +38,17 @@ public class alfaPayment extends AppCompatActivity implements QRGenerator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alfa_payment);
+
+        qrcode = findViewById(R.id.qrcode);
+        qrcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(alfaPayment.this,qrscan.class);
+                intent.putExtra("code",Integer.toString(code));
+                startActivity(intent);
+            }
+        });
+
         backtopaymetns = findViewById(R.id.backtopaymetns);
         backtopaymetns.setOnClickListener(new View.OnClickListener() {
             @Override
