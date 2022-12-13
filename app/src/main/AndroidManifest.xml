@@ -31,6 +31,9 @@
             android:name=".Seat"
             android:exported="false" />
         <activity
+            android:name=".DetailPayment"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false"
             android:label="register" />

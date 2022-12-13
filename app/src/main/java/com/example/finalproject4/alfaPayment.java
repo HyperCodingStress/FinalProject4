@@ -17,8 +17,8 @@ public class alfaPayment extends AppCompatActivity implements QRGenerator {
 
         TotalHarga = (TextView) findViewById(R.id.TotalHargaAlfa);
         numericgenAlfa = (TextView) findViewById(R.id.numericgenAlfa);
-
-        TotalHarga.setText(getIntent().getStringExtra("harga"));
+        int hargaTemp = getIntent().getIntExtra("harga",0);
+        TotalHarga.setText("Rp"+String.valueOf(hargaTemp));
         generate();
         numericgenAlfa.setText(Integer.toString(code));
     }

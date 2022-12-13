@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class PaymentMethod extends AppCompatActivity implements View.OnClickListener{
     TextView bni,alfa,TotalHarga;
-    String tampungHarga;
+    int harga;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class PaymentMethod extends AppCompatActivity implements View.OnClickList
         alfa = (TextView) findViewById(R.id.alfaPayment);
         TotalHarga = (TextView) findViewById(R.id.TotalHarga);
         int hargaTemp = getIntent().getIntExtra("harga",0);
-        System.out.println(hargaTemp);
+        harga = hargaTemp;
         TotalHarga.setText(String.valueOf("Rp"+hargaTemp));
 
         bni.setOnClickListener(this);
@@ -32,12 +32,12 @@ public class PaymentMethod extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.BniPayment:
                 Intent intent = new Intent(this,bniPayment.class);
-                intent.putExtra("harga",tampungHarga);
+                intent.putExtra("harga",harga);
                 startActivity(intent);
                 break;
             case R.id.alfaPayment:
                 Intent Intent = new Intent(this,alfaPayment.class);
-                Intent.putExtra("harga",tampungHarga);
+                Intent.putExtra("harga",harga);
                 startActivity(Intent);
                 break;
         }

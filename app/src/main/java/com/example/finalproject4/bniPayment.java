@@ -22,15 +22,16 @@ public class bniPayment extends AppCompatActivity implements QRGenerator{
         TotalHarga = (TextView) findViewById(R.id.TotalHarga);
         hargaTiket = (TextView) findViewById(R.id.hargaTiket);
         numericgen = (TextView) findViewById(R.id.numericgen);
-
-        TotalHarga.setText(getIntent().getStringExtra("harga"));
-        hargaTiket.setText(getIntent().getStringExtra("harga"));
+        int hargaTemp = getIntent().getIntExtra("harga",0);
+        TotalHarga.setText("Rp"+String.valueOf(hargaTemp));
+        hargaTiket.setText(String.valueOf(hargaTemp));
+        generate();
         numericgen.setText(Integer.toString(code));
-
         verifAlfa = (Button) findViewById(R.id.verifAlfa);
         verifAlfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(getApplicationContext(),TicketDetail.class));
             }
         });
