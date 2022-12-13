@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class HomePage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private TextView datang,kembali;
-    private ImageButton dateButton,returnButton;
+    private ImageButton dateButton,returnButton,backLogin;
     private Button search;
     private DatePickerDialog datePickerDialog;
     private Spinner from,to;
@@ -41,6 +41,14 @@ public class HomePage extends AppCompatActivity implements AdapterView.OnItemSel
 
         from = findViewById(R.id.From); // spinner
         to = findViewById(R.id.To); // spinner
+        backLogin = findViewById(R.id.backLogin);
+        backLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.listTempat, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -65,7 +73,9 @@ public class HomePage extends AppCompatActivity implements AdapterView.OnItemSel
                    //pop up gagal
                 }
                 else{
-                    intent.putExtra("nama",DataTujuan);
+                    intent.putExtra("datatujuan",DataTujuan);
+                    intent.putExtra("tanggalAwal",datang.getText().toString());
+                    intent.putExtra("tanggalKembali",kembali.getText().toString());
                     startActivity(intent);
                 }
             }
@@ -151,6 +161,7 @@ public class HomePage extends AppCompatActivity implements AdapterView.OnItemSel
             TextView errorText = (TextView)to.getSelectedView();
             errorText.setError("Destinasi tidak boleh sama");
             errorText.requestFocus();
+            return;
         }
     }
 

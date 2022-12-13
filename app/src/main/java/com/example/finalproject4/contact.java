@@ -70,6 +70,20 @@ public class contact extends AppCompatActivity {
                 intent.putExtra("gender",gender);
                 intent.putExtra("nomor",nomor.getText().toString());
                 intent.putExtra("age",age.getText().toString());
+                String jamAwal = getIntent().getStringExtra("estimasiAwal");
+                String jamAkhir = getIntent().getStringExtra("estimasiAkhir");
+                String NamaAwal = getIntent().getStringExtra("namaAwal");
+                String namaAkhir = getIntent().getStringExtra("namaAkhir");
+
+                System.out.println("contact");
+                System.out.println("nama : " + namaUser);
+                intent.putExtra("namabis",getIntent().getStringExtra("namabis"));
+                intent.putExtra("estimasiAwal",jamAwal);
+                intent.putExtra("estimasiAkhir",jamAkhir);
+                intent.putExtra("namaAwal",NamaAwal);
+                intent.putExtra("namaAkhir",namaAkhir);
+                intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
+                intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
                 startActivity(intent);
             }
         });

@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -26,24 +28,32 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailPesanan extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     RecyclerView recyclerView;
     DataAdapter dataAdapter;
-    private Spinner spinner;
+    ImageButton backHomePage;
     private String status;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     AlertDialog.Builder builder;
+    TextView location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_pesanan);
 
-        spinner = findViewById(R.id.price); // spinner
 
+        String nama = getIntent().getStringExtra("datatujuan");
+        location= findViewById(R.id.location);
+        location.setText(nama);
         //spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.pricelist, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(this);
+        backHomePage = findViewById(R.id.backHomePage);
+        backHomePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //list item di firebase
         recyclerView = (RecyclerView) findViewById(R.id.testRc);
@@ -71,10 +81,15 @@ public class DetailPesanan extends AppCompatActivity implements AdapterView.OnIt
                                 intent.putExtra("nama",dataAdapter.DataNama);
                                 intent.putExtra("type", dataAdapter.DataType);
                                 intent.putExtra("rating", dataAdapter.DataRating);
-                                intent.putExtra("estimasi", dataAdapter.DataEstimate);
+                                intent.putExtra("estimasiAwal", dataAdapter.DataEstimateAwal);
+                                intent.putExtra("estimasiAkhir", dataAdapter.DataEstimateAkhir);
+                                intent.putExtra("namaAwal", dataAdapter.DataNamaAwal);
+                                intent.putExtra("namaAkhir", dataAdapter.DataNamaAkhir);
                                 intent.putExtra("hargaTiket", dataAdapter.DataHarga);
                                 intent.putExtra("rate", dataAdapter.DataRate);
                                 intent.putExtra("hours", dataAdapter.DataHours);
+                                intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
+                                intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
                                 startActivity(intent);
 
                             }

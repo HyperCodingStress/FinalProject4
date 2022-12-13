@@ -7,12 +7,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Seat extends AppCompatActivity implements View.OnClickListener{
     TextView nama,type,totalan;
     Button buy;
+    ImageButton backHomeDetail;
     RelativeLayout a1,a2,a3,a4,a5,b1,b2,b3,b4,b5,c1,c2,c3,c4,c5;
     String A1 = "#FF6200EE" ,
             A2 = "#FF6200EE" ,
@@ -35,6 +37,14 @@ public class Seat extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seat);
+
+        backHomeDetail = findViewById(R.id.backHomeDetail);
+        backHomeDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         nama = (TextView) findViewById(R.id.NamaDetail);
         type = (TextView) findViewById(R.id.TypeDetail);
@@ -88,8 +98,19 @@ public class Seat extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buy:
+                String jamAwal = getIntent().getStringExtra("estimasiAwal");
+                String jamAkhir = getIntent().getStringExtra("estimasiAkhir");
+                String namaAwal = getIntent().getStringExtra("namaAwal");
+                String namaAkhir = getIntent().getStringExtra("namaAkhir");
                 Intent intent = new Intent(this,contact.class);
+                intent.putExtra("namabis",getIntent().getStringExtra("nama"));
                 intent.putExtra("harga",harga);
+                intent.putExtra("estimasiAwal",jamAwal);
+                intent.putExtra("estimasiAkhir",jamAkhir);
+                intent.putExtra("namaAwal",namaAwal);
+                intent.putExtra("namaAkhir",namaAkhir);
+                intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
+                intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
                 startActivity(intent);
                 break;
             case R.id.A1:

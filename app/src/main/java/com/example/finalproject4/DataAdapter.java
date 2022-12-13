@@ -30,7 +30,7 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
      * @param options
      */
 
-    public String DataNama,DataType,DataRating,DataEstimate;
+    public String DataNama,DataType,DataRating,DataEstimateAwal,DataEstimateAkhir,DataNamaAkhir,DataNamaAwal;
     public Integer DataHarga,DataRate,DataHours;
 
     private OnRecyclerViewClickListener listener;
@@ -55,7 +55,10 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
         holder.rating.setText(model.getRating());
         holder.rate.setText(model.getRate() + " Rating");
         holder.harga.setText("Rp"+model.getHarga());
-        holder.estimate.setText(model.getEstimasi());
+        holder.estimateAwal.setText(model.getJamAwal());
+        holder.estimateAkhir.setText(model.getJamAkhir());
+        holder.namaAwal.setText(model.getNamaAwal());
+        holder.namaAkhir.setText(model.getNamaAkhir());
     }
 
     @NonNull
@@ -66,9 +69,8 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{
-        TextView nama,type,jam,rating,harga,rate,estimate;
+        TextView nama,type,jam,rating,harga,rate,estimateAwal,estimateAkhir,namaAwal,namaAkhir;
         Button btnBo;
-
         public myViewHolder(@NonNull View itemView, OnRecyclerViewClickListener listener) {
             super(itemView);
             nama = (TextView) itemView.findViewById(R.id.NamaBus);
@@ -77,7 +79,10 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
             rating = (TextView) itemView.findViewById(R.id.Rating);
             rate = (TextView) itemView.findViewById(R.id.Rate);
             harga = (TextView) itemView.findViewById(R.id.Harga);
-            estimate = (TextView) itemView.findViewById(R.id.BusEstimate);
+            estimateAwal = (TextView) itemView.findViewById(R.id.BusEstimateAwal);
+            estimateAkhir = (TextView) itemView.findViewById(R.id.BusEstimateAkhir);
+            namaAwal = (TextView) itemView.findViewById(R.id.namaAwal);
+            namaAkhir = (TextView) itemView.findViewById(R.id.namaAkhir);
             btnBo = (Button) itemView.findViewById(R.id.booking);
 
             btnBo.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +94,10 @@ public class DataAdapter  extends FirebaseRecyclerAdapter<DataModel,DataAdapter.
                         DataType = type.getText().toString().trim();
                         DataHarga = Integer.valueOf(harga.getText().toString().trim().replaceAll("[^0-9]+", ""));
                         DataRating = rating.getText().toString().trim();
-                        DataEstimate = estimate.getText().toString().trim();
+                        DataEstimateAwal = estimateAwal.getText().toString().trim();
+                        DataEstimateAkhir = estimateAkhir.getText().toString().trim();
+                        DataNamaAwal = namaAwal.getText().toString().trim();
+                        DataNamaAkhir = namaAkhir.getText().toString().trim();
                         DataRate = Integer.valueOf(rate.getText().toString().trim().replaceAll("[^0-9]+", ""));
                         DataHours = Integer.valueOf(jam.getText().toString().trim().replaceAll("[^0-9]+", ""));
                     }

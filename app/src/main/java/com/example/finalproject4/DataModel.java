@@ -1,20 +1,77 @@
 package com.example.finalproject4;
 
 public class DataModel {
-    public String nama,type,rating,estimasi;
+    public String nama,type,rating,jamAwal,jamAkhir,namaAkhir,namaAwal,gender,age,nomorBo,tanggalAwal;
     public Integer harga,rate,hours;
+
+    public String getTanggalAwal() {
+        return tanggalAwal;
+    }
+
+    public void setTanggalAwal(String tanggalAwal) {
+        this.tanggalAwal = tanggalAwal;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getNomorBo() {
+        return nomorBo;
+    }
+
+    public void setNomorBo(String nomorBo) {
+        this.nomorBo = nomorBo;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public Integer getRate() {
         return rate;
     }
 
-    public String getEstimasi() {
-        return estimasi;
+    public String getNamaAkhir() {
+        return namaAkhir;
     }
 
-    public void setEstimasi(String estimasi) {
-        this.estimasi = estimasi;
+    public void setNamaAkhir(String namaAkhir) {
+        this.namaAkhir = namaAkhir;
     }
+
+    public String getNamaAwal() {
+        return namaAwal;
+    }
+
+    public void setNamaAwal(String namaAwal) {
+        this.namaAwal = namaAwal;
+    }
+
+    public String getJamAwal() {
+        return jamAwal;
+    }
+
+    public void setJamAwal(String jamAwal) {
+        this.jamAwal = jamAwal;
+    }
+
+    public String getJamAkhir() {
+        return jamAkhir;
+    }
+
+    public void setJamAkhir(String jamAkhir) {
+        this.jamAkhir = jamAkhir;
+    }
+
 
     public void setRate(Integer rate) {
         this.rate = rate;
