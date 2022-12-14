@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class HomePage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private TextView datang,kembali;
-    private ImageButton dateButton,returnButton,backLogin;
+    private ImageButton dateButton,returnButton,backLogin,profile;
     private Button search;
     private DatePickerDialog datePickerDialog;
     private Spinner from,to;
@@ -38,6 +38,15 @@ public class HomePage extends AppCompatActivity implements AdapterView.OnItemSel
         search = findViewById(R.id.search);
         datang = findViewById(R.id.tanggalBerangkat);
         kembali = findViewById(R.id.tanggalKembali);
+
+        profile = findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this,profile.class);
+                startActivity(intent);
+            }
+        });
 
         from = findViewById(R.id.From); // spinner
         to = findViewById(R.id.To); // spinner
