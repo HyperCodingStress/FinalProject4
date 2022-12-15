@@ -100,24 +100,21 @@ public class bniPayment extends AppCompatActivity implements QRGenerator{
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(bniPayment.this,"Berhasil Membeli",Toast.LENGTH_SHORT).show();
-                                AlertDialog.Builder builder = new AlertDialog.Builder(bniPayment.this);
-                                LayoutInflater inflater = getLayoutInflater();
-                                builder.setView(inflater.inflate(R.layout.ratingpop, null))
-                                        .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                Intent intent = new Intent(bniPayment.this,TicketDetail.class);
-                                                startActivity(intent);
-                                            }
-                                        })
-                                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-//                                                bniPayment.this.getDialog().cancel();
-                                            }
-                                        });
-                                builder.show();
+                                Intent intent = new Intent(bniPayment.this,succesPayment.class);
+                                intent.putExtra("nama",namaUser);
+                                intent.putExtra("gender",genderUser);
+                                intent.putExtra("age",ageUser);
+                                intent.putExtra("nomor",nomorUser);
+                                intent.putExtra("jamAwal",jamAwal);
+                                intent.putExtra("jamAwal",jamAkhir);
+                                intent.putExtra("namaAwal",terminalAwal);
+                                intent.putExtra("namaAkhir",terminalAkhir);
+                                intent.putExtra("harga",hargaTemp);
+                                intent.putExtra("namabis",getIntent().getStringExtra("namabis"));
+                                intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
+                                intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
+                                intent.putExtra("via","BNI");
+                                startActivity(intent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

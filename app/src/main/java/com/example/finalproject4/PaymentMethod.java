@@ -53,7 +53,7 @@ public class PaymentMethod extends AppCompatActivity implements View.OnClickList
                 intent.putExtra("namabis",getIntent().getStringExtra("namabis"));
                 intent.putExtra("gender" , genderUser);
                 intent.putExtra("age",ageUser);
-                intent.putExtra("nomorUser",nomorUser);
+                intent.putExtra("nomor",nomorUser);
                 intent.putExtra("jamAwal" , jamAwal);
                 intent.putExtra("jamAkhir",jamAkhir);
                 intent.putExtra("terminalAwal" , terminalAwal);
@@ -69,7 +69,7 @@ public class PaymentMethod extends AppCompatActivity implements View.OnClickList
                 Intent.putExtra("namabis",getIntent().getStringExtra("namabis"));
                 Intent.putExtra("gender" , genderUser);
                 Intent.putExtra("age",ageUser);
-                Intent.putExtra("nomorUser",nomorUser);
+                Intent.putExtra("nomor",nomorUser);
                 Intent.putExtra("jamAwal" , jamAwal);
                 Intent.putExtra("jamAkhir",jamAkhir);
                 Intent.putExtra("terminalAwal" , terminalAwal);

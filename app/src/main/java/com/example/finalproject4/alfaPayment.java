@@ -4,15 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +26,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,9 +52,30 @@ public class alfaPayment extends AppCompatActivity implements QRGenerator {
         qrcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(alfaPayment.this,qrscan.class);
-                intent.putExtra("code",Integer.toString(code));
-                startActivity(intent);
+                final Dialog dialog = new Dialog(alfaPayment.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(true);
+                dialog.setContentView(R.layout.activity_qrscan);
+
+                final ImageView mImage = dialog.findViewById(R.id.qr);
+
+                QRCodeWriter qrgenerator = new QRCodeWriter();
+
+                try {
+                    BitMatrix matrix = qrgenerator.encode(Integer.toString(code), BarcodeFormat.QR_CODE,500,500);
+                    Bitmap bitmap = Bitmap.createBitmap(500,500,Bitmap.Config.RGB_565);
+
+                    for (int i = 0; i < 500; i++){
+                        for (int j = 0; j < 500; j++){
+                            bitmap.setPixel(i,j,matrix.get(i,j)? Color.BLACK:Color.WHITE);
+                        }
+                    }
+                    mImage.setImageBitmap(bitmap);
+                } catch (WriterException e) {
+                    e.printStackTrace();
+                }
+
+                dialog.show();
             }
         });
 
@@ -96,7 +126,20 @@ public class alfaPayment extends AppCompatActivity implements QRGenerator {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(alfaPayment.this,"Berhasil Membeli",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(alfaPayment.this,TicketDetail.class);
+                                Intent intent = new Intent(alfaPayment.this,succesPayment.class);
+                                intent.putExtra("nama",namaUser);
+                                intent.putExtra("gender",genderUser);
+                                intent.putExtra("age",ageUser);
+                                intent.putExtra("nomor",nomorUser);
+                                intent.putExtra("jamAwal",jamAwal);
+                                intent.putExtra("jamAwal",jamAkhir);
+                                intent.putExtra("namaAwal",terminalAwal);
+                                intent.putExtra("namaAkhir",terminalAkhir);
+                                intent.putExtra("harga",hargaTemp);
+                                intent.putExtra("namabis",getIntent().getStringExtra("namabis"));
+                                intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
+                                intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
+                                intent.putExtra("via","ALFAMART");
                                 startActivity(intent);
                             }
                         })

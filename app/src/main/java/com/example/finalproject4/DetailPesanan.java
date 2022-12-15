@@ -70,24 +70,33 @@ public class DetailPesanan extends AppCompatActivity implements AdapterView.OnIt
         dataAdapter.OnRecyclerViewClickListener(new DataAdapter.OnRecyclerViewClickListener() {
             @Override
             public void onClick(int position) {
-
+                String namaTravel  = options.getSnapshots().get(position).nama;
+                String typeTravel  = options.getSnapshots().get(position).type;
+                String rating  = options.getSnapshots().get(position).rating;
+                String jamAWalTravel  = options.getSnapshots().get(position).jamAwal;
+                String jamAkhirTravel  = options.getSnapshots().get(position).jamAkhir;
+                String namaAwalTravel  = options.getSnapshots().get(position).namaAwal;
+                String namaAkhirTravel  = options.getSnapshots().get(position).namaAkhir;
+                int hargaTicket  = options.getSnapshots().get(position).harga;
+                int rateTravel  = options.getSnapshots().get(position).rate;
+                int jamTravel  = options.getSnapshots().get(position).hours;
                 builder.setTitle("Pesanan")
-                        .setMessage("Apakah anda yakin membeli tiket " + dataAdapter.DataNama + " ini?")
+                        .setMessage("Apakah anda yakin membeli tiket " + namaTravel + " ini?")
                         .setCancelable(true)
                         .setPositiveButton("yakin", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent =  new Intent(DetailPesanan.this,Seat.class);
-                                intent.putExtra("nama",dataAdapter.DataNama);
-                                intent.putExtra("type", dataAdapter.DataType);
-                                intent.putExtra("rating", dataAdapter.DataRating);
-                                intent.putExtra("estimasiAwal", dataAdapter.DataEstimateAwal);
-                                intent.putExtra("estimasiAkhir", dataAdapter.DataEstimateAkhir);
-                                intent.putExtra("namaAwal", dataAdapter.DataNamaAwal);
-                                intent.putExtra("namaAkhir", dataAdapter.DataNamaAkhir);
-                                intent.putExtra("hargaTiket", dataAdapter.DataHarga);
-                                intent.putExtra("rate", dataAdapter.DataRate);
-                                intent.putExtra("hours", dataAdapter.DataHours);
+                                intent.putExtra("nama",namaTravel);
+                                intent.putExtra("type", typeTravel);
+                                intent.putExtra("rating", rating);
+                                intent.putExtra("estimasiAwal", jamAWalTravel);
+                                intent.putExtra("estimasiAkhir", jamAkhirTravel);
+                                intent.putExtra("namaAwal", namaAwalTravel );
+                                intent.putExtra("namaAkhir", namaAkhirTravel);
+                                intent.putExtra("hargaTiket", hargaTicket);
+                                intent.putExtra("rate", rateTravel);
+                                intent.putExtra("hours", jamTravel);
                                 intent.putExtra("tanggalAwal",getIntent().getStringExtra("tanggalAwal"));
                                 intent.putExtra("tanggalKembali",getIntent().getStringExtra("tanggalKembali"));
                                 startActivity(intent);
